@@ -1,6 +1,6 @@
 function displaySong(response) {
-    console.log("song generated")
-    new Typewriter("#song", {
+    
+        new Typewriter("#song", {
         strings: response.data.answer,
         autoStart: true,
         delay: 1,
@@ -21,9 +21,6 @@ function generateSong(event) {
     songElement.classList.remove("hidden");
     songElement.innerHTML = `<div class= "generating">⏳Generationg the song about ${instructionsInput.value}</div>`;
 
-    console.log("Generationg song");
-    console.log(`Prompt: ${prompt}`);
-    console.log(`Context: ${context}`);
 
     axios.get(apiURL).then(displaySong);
 }
