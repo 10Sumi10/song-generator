@@ -17,6 +17,10 @@ function generateSong(event) {
     let prompt = `User instructions: Generate a heartouching song about ${instructionsInput.value}`;
     let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+    let songElement = document.querySelector("#song");
+    songElement.classList.remove("hidden");
+    songElement.innerHTML = `<div class= "generating">⏳Generationg the song about ${instructionsInput.value}</div>`;
+
     console.log("Generationg song");
     console.log(`Prompt: ${prompt}`);
     console.log(`Context: ${context}`);
